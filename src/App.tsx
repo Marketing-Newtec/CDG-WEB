@@ -118,7 +118,8 @@ export default function App() {
 
         <main>
           <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-            <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-30" style={{ backgroundImage: `url('https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/03/cdg-portada-hero-inicio-scaled.jpg')` }} />
+            {/* Imagen del hero actualizada */}
+            <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-30" style={{ backgroundImage: `url('https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/cdg-inicio-importadora.jpg')` }} />
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-[#911913]/90 z-0 pointer-events-none" />
 
             <div className="max-w-7xl mx-auto px-6 w-full relative z-10 text-center">
@@ -141,18 +142,15 @@ export default function App() {
 
               <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                 <h2 className="font-poppins text-4xl md:text-5xl lg:text-7xl font-bold uppercase mb-8 lg:mb-10 tracking-tighter leading-[1.1]">QUIÉNES SOMOS</h2>
-                {/* Texto editado */}
                 <p className="font-sans text-lg lg:text-xl text-white/70 mb-6 leading-relaxed">Referente en la importación y exportación de productos médicos, garantizando estándares internacionales en logística y distribución de insumos médicos hospitalarios.</p>
                 <div className="grid grid-cols-2 gap-8 mt-12">
                   <div className="flex flex-col gap-2">
                     <Award size={32} className="text-[#e74520]" />
-                    {/* Texto editado */}
                     <div className="text-3xl font-bold font-poppins">20+</div>
                     <div className="text-xs text-white/40 uppercase font-bold tracking-widest">años de experiencia</div>
                   </div>
                   <div className="flex flex-col gap-2">
                     <VenetianMask size={32} className="text-[#e74520]" />
-                    {/* Texto editado */}
                     <div className="text-3xl font-bold font-poppins">500+</div>
                     <div className="text-xs text-white/40 uppercase font-bold tracking-widest">productos importados</div>
                   </div>
