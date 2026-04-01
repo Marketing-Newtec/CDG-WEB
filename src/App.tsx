@@ -17,8 +17,6 @@ import { motion, AnimatePresence } from 'motion/react';
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  // Estado para controlar la pausa del slider
-  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -165,24 +163,17 @@ export default function App() {
               <div className="w-24 h-1 bg-[#e74520] mx-auto"></div>
             </div>
             
-            <div 
-              className="flex relative cursor-pointer"
-              // Eventos para pausar y reanudar
-              onMouseEnter={() => setIsPaused(true)}
-              onMouseLeave={() => setIsPaused(false)}
-            >
+            <div className="flex relative">
               <motion.div 
-                animate={{ 
-                  // Si está pausado, mantenemos la posición actual, si no, animamos a -4320
-                  x: isPaused ? undefined : [0, -4320] 
-                }} 
+                animate={{ x: [0, -4320] }} 
                 transition={{ 
-                  duration: 30,
+                  duration: 30, // 30% más rápido que antes
                   repeat: Infinity, 
                   ease: "linear" 
                 }}
                 className="flex gap-8 whitespace-nowrap"
               >
+                {/* Triplicamos el array para asegurar fluidez total en el loop */}
                 {[...marcas, ...marcas, ...marcas].map((logo, i) => (
                   <div key={i} className="flex-shrink-0 w-48 h-24 bg-[#F6F6F6] rounded-2xl border border-black/5 flex items-center justify-center transition-all px-6">
                     <img 
