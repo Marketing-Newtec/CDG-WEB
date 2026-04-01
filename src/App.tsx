@@ -32,6 +32,26 @@ export default function App() {
     { name: 'Contacto', href: '#contacto' },
   ];
 
+  // Array de marcas actualizado con los nuevos logos
+  const marcas = [
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/supermax.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/flumax-color-scaled.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/greetmed-color-scaled.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/harsoria.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/hemobag.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/higiemax-color-scaled.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/index-color.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/infumed.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/intratub.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/Logo-Urocare.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/Max-Continental-viejo.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/max-sutures-color.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/medical-precision-color.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/Medispo-normal.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/one-band-color-scaled.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/one-gloves-color.png"
+  ];
+
   return (
     <div className="min-h-screen font-sans text-white bg-animated-gradient">
       {/* Navbar */}
@@ -105,12 +125,10 @@ export default function App() {
       <main>
         {/* Hero Section */}
         <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-          {/* Background Image with Parallax */}
           <div 
             className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-30"
             style={{ backgroundImage: `url('https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/03/cdg-portada-hero-inicio-scaled.jpg')` }}
           />
-          {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-[#911913]/90 z-0 pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-6 w-full relative z-10 text-center">
@@ -201,13 +219,18 @@ export default function App() {
           
           <div className="flex relative">
             <motion.div 
-              animate={{ x: [0, -1035] }}
-              transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+              animate={{ x: [0, -2500] }} // Ajustado para un scroll más largo dado que hay más marcas
+              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
               className="flex gap-8 lg:gap-12 whitespace-nowrap"
             >
-              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((brand, i) => (
-                <div key={i} className="flex-shrink-0 w-40 lg:w-48 h-20 lg:h-24 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 flex items-center justify-center group hover:bg-white/10 transition-colors">
-                  <span className="font-poppins text-white/30 font-bold uppercase text-lg lg:text-xl group-hover:text-white/80 transition-colors italic tracking-tighter">Marca {brand}</span>
+              {/* Duplicamos el array para el efecto infinito */}
+              {[...marcas, ...marcas].map((logo, i) => (
+                <div key={i} className="flex-shrink-0 w-40 lg:w-48 h-20 lg:h-24 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 flex items-center justify-center group hover:bg-white/10 transition-all px-6">
+                  <img 
+                    src={logo} 
+                    alt={`Marca ${i}`} 
+                    className="max-w-full max-h-[60%] object-contain brightness-0 invert opacity-40 group-hover:opacity-100 transition-opacity duration-500"
+                  />
                 </div>
               ))}
             </motion.div>
