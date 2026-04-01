@@ -219,17 +219,18 @@ export default function App() {
           
           <div className="flex relative">
             <motion.div 
-              animate={{ x: [0, -2500] }} // Ajustado para un scroll más largo dado que hay más marcas
-              transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-              className="flex gap-8 lg:gap-12 whitespace-nowrap"
+              animate={{ x: [0, -2160] }} // Ajustado para el scroll infinito con el ancho total de logos (16 * (192px + 32px gap)) / 2
+              transition={{ duration: 35, repeat: Infinity, ease: "linear" }}
+              className="flex gap-8 whitespace-nowrap"
             >
               {/* Duplicamos el array para el efecto infinito */}
               {[...marcas, ...marcas].map((logo, i) => (
-                <div key={i} className="flex-shrink-0 w-40 lg:w-48 h-20 lg:h-24 bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 flex items-center justify-center group hover:bg-white/10 transition-all px-6">
+                <div key={i} className="flex-shrink-0 w-48 h-24 bg-[#F6F6F6] rounded-2xl border border-black/5 flex items-center justify-center group transition-all px-6">
                   <img 
                     src={logo} 
-                    alt={`Marca ${i}`} 
-                    className="max-w-full max-h-[60%] object-contain brightness-0 invert opacity-40 group-hover:opacity-100 transition-opacity duration-500"
+                    alt={`Marca ${i % marcas.length}`} 
+                    className="max-w-full max-h-[65%] object-contain opacity-60 group-hover:opacity-100 transition-opacity duration-500"
+                    referrerPolicy="no-referrer"
                   />
                 </div>
               ))}
