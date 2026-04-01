@@ -17,6 +17,7 @@ import { motion, AnimatePresence } from 'motion/react';
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -140,15 +141,18 @@ export default function App() {
 
               <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                 <h2 className="font-poppins text-4xl md:text-5xl lg:text-7xl font-bold uppercase mb-8 lg:mb-10 tracking-tighter leading-[1.1]">QUIÉNES SOMOS</h2>
-                <p className="font-sans text-lg lg:text-xl text-white/70 mb-6 leading-relaxed">Referente en la provisión de tecnología médica, garantizando estándares internacionales en logística y distribución de insumos críticos en Tandil y el mundo.</p>
+                {/* Texto editado */}
+                <p className="font-sans text-lg lg:text-xl text-white/70 mb-6 leading-relaxed">Referente en la importación y exportación de productos médicos, garantizando estándares internacionales en logística y distribución de insumos médicos hospitalarios.</p>
                 <div className="grid grid-cols-2 gap-8 mt-12">
                   <div className="flex flex-col gap-2">
                     <Award size={32} className="text-[#e74520]" />
-                    <div className="text-3xl font-bold font-poppins">15+</div>
+                    {/* Texto editado */}
+                    <div className="text-3xl font-bold font-poppins">20+</div>
                     <div className="text-xs text-white/40 uppercase font-bold tracking-widest">años de experiencia</div>
                   </div>
                   <div className="flex flex-col gap-2">
                     <VenetianMask size={32} className="text-[#e74520]" />
+                    {/* Texto editado */}
                     <div className="text-3xl font-bold font-poppins">500+</div>
                     <div className="text-xs text-white/40 uppercase font-bold tracking-widest">productos importados</div>
                   </div>
@@ -163,17 +167,22 @@ export default function App() {
               <div className="w-24 h-1 bg-[#e74520] mx-auto"></div>
             </div>
             
-            <div className="flex relative">
+            <div 
+              className="flex relative cursor-pointer"
+              onMouseEnter={() => setIsPaused(true)}
+              onMouseLeave={() => setIsPaused(false)}
+            >
               <motion.div 
-                animate={{ x: [0, -4320] }} 
+                animate={{ 
+                  x: isPaused ? undefined : [0, -4320] 
+                }} 
                 transition={{ 
-                  duration: 30, // 30% más rápido que antes
+                  duration: 30,
                   repeat: Infinity, 
                   ease: "linear" 
                 }}
                 className="flex gap-8 whitespace-nowrap"
               >
-                {/* Triplicamos el array para asegurar fluidez total en el loop */}
                 {[...marcas, ...marcas, ...marcas].map((logo, i) => (
                   <div key={i} className="flex-shrink-0 w-48 h-24 bg-[#F6F6F6] rounded-2xl border border-black/5 flex items-center justify-center transition-all px-6">
                     <img 
@@ -191,10 +200,9 @@ export default function App() {
 
         <footer id="contacto" className="pt-24 pb-12 bg-black/40 px-6 border-t border-white/5 text-center md:text-left">
           <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-              <div>
-                <img src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/03/CDG-2-scaled.png" alt="Logo" className="h-16 w-auto brightness-0 invert mb-6" />
-                <p className="font-sans text-white/40">Importación de tecnología médica avanzada.</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 items-start">
+              <div className="flex flex-col items-center md:items-start">
+                <img src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/03/CDG-2-scaled.png" alt="Logo CDG" className="h-16 w-auto brightness-0 invert" />
               </div>
               <div>
                 <h4 className="font-poppins font-semibold uppercase text-xl mb-6">Navegación</h4>
@@ -204,9 +212,15 @@ export default function App() {
                   <li><a href="#marcas" className="hover:text-white transition-colors">Marcas</a></li>
                 </ul>
               </div>
-              <div>
+              <div className="flex flex-col items-center md:items-start">
                 <h4 className="font-poppins font-semibold uppercase text-xl mb-6">Nuestro partner</h4>
-                <div className="font-sans text-[#e74520] font-bold text-lg">MAX CONTINENTAL</div>
+                <a href="https://www.maxcontinental.com/" target="_blank" rel="noreferrer" className="group">
+                  <img 
+                    src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/logo-max-transp.png" 
+                    alt="Logo Max Continental" 
+                    className="h-10 w-auto brightness-0 invert opacity-60 group-hover:opacity-100 transition-all duration-300"
+                  />
+                </a>
               </div>
               <div>
                 <h4 className="font-poppins font-semibold uppercase text-xl mb-6">Contacto</h4>
