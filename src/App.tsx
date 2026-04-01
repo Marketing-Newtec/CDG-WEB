@@ -31,7 +31,6 @@ export default function App() {
     { name: 'Contacto', href: '#contacto' },
   ];
 
-  // Array completo con los 18 logos
   const marcas = [
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/supermax.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/flumax-color-scaled.png",
@@ -55,7 +54,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen font-sans text-white bg-[#0a0a0a]">
-      {/* Restauración del degradado de fondo vía Style Inline para evitar errores de CSS */}
       <style dangerouslySetInnerHTML={{ __html: `
         .bg-animated-gradient {
           background: linear-gradient(-45deg, #0a0a0a, #1a1a1a, #911913, #0a0a0a);
@@ -70,7 +68,6 @@ export default function App() {
       `}} />
 
       <div className="bg-animated-gradient min-h-screen">
-        {/* Navbar */}
         <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-black/40 backdrop-blur-xl py-3 shadow-2xl' : 'bg-transparent py-6'}`}>
           <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
             <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="flex items-center">
@@ -119,7 +116,6 @@ export default function App() {
         </nav>
 
         <main>
-          {/* Hero Section */}
           <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
             <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-30" style={{ backgroundImage: `url('https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/03/cdg-portada-hero-inicio-scaled.jpg')` }} />
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-[#911913]/90 z-0 pointer-events-none" />
@@ -133,7 +129,6 @@ export default function App() {
             </div>
           </section>
 
-          {/* About Us Section */}
           <section id="nosotros" className="py-24 lg:py-32 px-6 bg-white/5 backdrop-blur-sm">
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
               <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative">
@@ -162,20 +157,24 @@ export default function App() {
             </div>
           </section>
 
-          {/* Brands Slider con fondo F6F6F6 solicitado */}
           <section id="marcas" className="py-24 lg:py-32 overflow-hidden bg-black/20">
             <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-              <h2 className="font-poppins text-3xl md:text-5xl font-bold uppercase tracking-tighter mb-4">Marcas que Confían en Nosotros</h2>
+              <h2 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tighter mb-4">Marcas que Confían en Nosotros</h2>
               <div className="w-24 h-1 bg-[#e74520] mx-auto"></div>
             </div>
             
             <div className="flex relative">
               <motion.div 
-                animate={{ x: [0, -2430] }} 
-                transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
+                animate={{ x: [0, -4320] }} 
+                transition={{ 
+                  duration: 30, // 30% más rápido que antes
+                  repeat: Infinity, 
+                  ease: "linear" 
+                }}
                 className="flex gap-8 whitespace-nowrap"
               >
-                {[...marcas, ...marcas].map((logo, i) => (
+                {/* Triplicamos el array para asegurar fluidez total en el loop */}
+                {[...marcas, ...marcas, ...marcas].map((logo, i) => (
                   <div key={i} className="flex-shrink-0 w-48 h-24 bg-[#F6F6F6] rounded-2xl border border-black/5 flex items-center justify-center transition-all px-6">
                     <img 
                       src={logo} 
@@ -190,7 +189,6 @@ export default function App() {
           </section>
         </main>
 
-        {/* Footer */}
         <footer id="contacto" className="pt-24 pb-12 bg-black/40 px-6 border-t border-white/5 text-center md:text-left">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
