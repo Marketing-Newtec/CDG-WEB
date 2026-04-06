@@ -118,6 +118,7 @@ export default function App() {
 
         <main>
           <section id="inicio" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+            {/* Imagen del hero actualizada */}
             <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-30" style={{ backgroundImage: `url('https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/cdg-inicio-importadora.jpg')` }} />
             <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-[#911913]/90 z-0 pointer-events-none" />
 
@@ -134,8 +135,8 @@ export default function App() {
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
               <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative">
                 <div className="rounded-[40px] lg:rounded-[60px] overflow-hidden shadow-2xl border-4 border-white/10 aspect-[4/5] relative group">
-                  {/* Imagen actualizada de Logística e Importación */}
-                  <img src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/cdg-importadora-logistica.jpg" alt="Logística CDG" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                  {/* Imagen actualizada */}
+                  <img src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/cdg-importadora-deposito.png" alt="Depósito CDG" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-[#911913]/20 group-hover:bg-transparent transition-colors duration-700" />
                 </div>
               </motion.div>
