@@ -33,11 +33,15 @@ export default function App() {
   ];
 
   const marcas = [
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/sinocare.png", // Primero en el listado
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/supermax.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/flumax-color-scaled.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/greetmed-color-scaled.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/harsoria.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/hemobag.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/TIANHE.png", // Pegado a Hemobag
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/logo-hisern.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/bajaypack.jpg",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/higiemax-color-scaled.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/index-color.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/infumed.png",
@@ -123,7 +127,6 @@ export default function App() {
 
             <div className="max-w-7xl mx-auto px-6 w-full relative z-10 text-center">
               <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="flex flex-col items-center">
-                {/* Logo Principal en reemplazo del título */}
                 <img 
                   src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/03/CDG-2-scaled.png" 
                   alt="CDG Importadora" 
@@ -159,8 +162,8 @@ export default function App() {
                 <div className="grid grid-cols-2 gap-8 mt-12">
                   <div className="flex flex-col gap-2">
                     <Award size={32} className="text-[#e74520]" />
-                    <div className="text-3xl font-bold font-poppins">Desde 2003</div>
-                    <div className="text-xs text-white/40 uppercase font-bold tracking-widest">experiencia y calidad</div>
+                    <div className="text-3xl font-bold font-poppins">20+</div>
+                    <div className="text-xs text-white/40 uppercase font-bold tracking-widest">años de experiencia</div>
                   </div>
                   <div className="flex flex-col gap-2">
                     <VenetianMask size={32} className="text-[#e74520]" />
@@ -185,10 +188,10 @@ export default function App() {
             >
               <motion.div 
                 animate={{ 
-                  x: isPaused ? undefined : [0, -4320] 
+                  x: isPaused ? undefined : [0, -5280] // Ajustado para el nuevo número de marcas
                 }} 
                 transition={{ 
-                  duration: 30,
+                  duration: 40, // Un poco más lento por el aumento de logos
                   repeat: Infinity, 
                   ease: "linear" 
                 }}
