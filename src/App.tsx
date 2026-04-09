@@ -133,7 +133,8 @@ export default function App() {
                   className="w-auto h-24 md:h-40 lg:h-48 mb-10 brightness-0 invert drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]"
                 />
                 <p className="font-sans text-xl md:text-3xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed font-light drop-shadow-lg">
-                  Somos la división importadora y exportadora de <strong>Max Continental</strong> y <strong>Distribuidora Gamma</strong>.
+                  Somos la división importadora y exportadora de <br className="hidden md:block" />
+                  <strong>Max Continental</strong> y <strong>Distribuidora Gamma</strong>.
                 </p>
                 <motion.a 
                   whileHover={{ scale: 1.05 }} 
@@ -162,8 +163,8 @@ export default function App() {
                 <div className="grid grid-cols-2 gap-8 mt-12">
                   <div className="flex flex-col gap-2">
                     <Award size={32} className="text-[#e74520]" />
-                    <div className="text-3xl font-bold font-poppins">20+</div>
-                    <div className="text-xs text-white/40 uppercase font-bold tracking-widest">años de experiencia</div>
+                    <div className="text-3xl font-bold font-poppins">Desde 2003</div>
+                    <div className="text-xs text-white/40 uppercase font-bold tracking-widest">Experiencia y calidad</div>
                   </div>
                   <div className="flex flex-col gap-2">
                     <VenetianMask size={32} className="text-[#e74520]" />
