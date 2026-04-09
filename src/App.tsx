@@ -123,9 +123,23 @@ export default function App() {
 
             <div className="max-w-7xl mx-auto px-6 w-full relative z-10 text-center">
               <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="flex flex-col items-center">
-                <h1 className="font-poppins text-6xl md:text-8xl lg:text-9xl font-bold uppercase leading-[1.1] lg:leading-[0.9] mb-8 tracking-tighter drop-shadow-2xl">Somos CDG</h1>
-                <p className="font-sans text-xl md:text-3xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed font-light drop-shadow-lg">Importamos y exportamos productos médicos de alta calidad</p>
-                <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#nosotros" className="font-sans px-12 py-6 bg-white text-[#911913] font-bold rounded-full hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] transition-all text-lg tracking-widest uppercase">NUESTRA HISTORIA</motion.a>
+                {/* Logo Principal en reemplazo del título */}
+                <img 
+                  src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/03/CDG-2-scaled.png" 
+                  alt="CDG Importadora" 
+                  className="w-auto h-24 md:h-40 lg:h-48 mb-10 brightness-0 invert drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]"
+                />
+                <p className="font-sans text-xl md:text-3xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed font-light drop-shadow-lg">
+                  Somos la división importadora y exportadora de <strong>Max Continental</strong> y <strong>Distribuidora Gamma</strong>.
+                </p>
+                <motion.a 
+                  whileHover={{ scale: 1.05 }} 
+                  whileTap={{ scale: 0.95 }} 
+                  href="#nosotros" 
+                  className="font-sans px-12 py-6 bg-white text-[#911913] font-bold rounded-full hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] transition-all text-lg tracking-widest uppercase"
+                >
+                  Conócenos
+                </motion.a>
               </motion.div>
             </div>
           </section>
@@ -134,7 +148,6 @@ export default function App() {
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
               <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative">
                 <div className="rounded-[40px] lg:rounded-[60px] overflow-hidden shadow-2xl border-4 border-white/10 aspect-[4/5] relative group">
-                  {/* Imagen actualizada de la sección Quiénes Somos */}
                   <img src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/cdg-importadora-deposito.jpg" alt="Depósito CDG" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
                   <div className="absolute inset-0 bg-[#911913]/20 group-hover:bg-transparent transition-colors duration-700" />
                 </div>
