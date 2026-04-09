@@ -41,8 +41,8 @@ export default function App() {
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/hemobag.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/TIANHE.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/logo-hisern.png",
-    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/medicon.png", // Nueva Marca
-    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/topdres.png", // Nueva Marca
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/medicon-1.png", // URL Actualizada de Medicon
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/topdres.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/bajaypack.jpg",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/higiemax-color-scaled.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/index-color.png",
@@ -56,7 +56,8 @@ export default function App() {
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/one-band-color-scaled.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/one-gloves-color.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/Healcath.png",
-    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/Healcath-Plus.png"
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/Healcath-Plus.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/protbarrier.png" // Nueva Marca Agregada
   ];
 
   return (
@@ -191,10 +192,10 @@ export default function App() {
             >
               <motion.div 
                 animate={{ 
-                  x: isPaused ? undefined : [0, -5760] // Ajustado para 24 marcas (48px de gap + 192px de ancho)
+                  x: isPaused ? undefined : [0, -6000] // Ajustado para 25 marcas: (48px gap + 192px ancho) * 25 = 6000px
                 }} 
                 transition={{ 
-                  duration: 45,
+                  duration: 50, // Ligeramente más lento para acomodar la nueva marca manteniendo la suavidad
                   repeat: Infinity, 
                   ease: "linear" 
                 }}
