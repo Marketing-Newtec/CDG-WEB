@@ -33,13 +33,13 @@ export default function App() {
   ];
 
   const marcas = [
-    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/sinocare.png", // Primero en el listado
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/sinocare.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/supermax.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/flumax-color-scaled.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/greetmed-color-scaled.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/harsoria.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/hemobag.png",
-    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/TIANHE.png", // Pegado a Hemobag
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/TIANHE.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/logo-hisern.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/bajaypack.jpg",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/higiemax-color-scaled.png",
@@ -188,10 +188,10 @@ export default function App() {
             >
               <motion.div 
                 animate={{ 
-                  x: isPaused ? undefined : [0, -5280] // Ajustado para el nuevo número de marcas
+                  x: isPaused ? undefined : [0, -5280] 
                 }} 
                 transition={{ 
-                  duration: 40, // Un poco más lento por el aumento de logos
+                  duration: 40,
                   repeat: Infinity, 
                   ease: "linear" 
                 }}
@@ -227,14 +227,25 @@ export default function App() {
                 </ul>
               </div>
               <div className="flex flex-col items-center md:items-start">
-                <h4 className="font-poppins font-semibold uppercase text-xl mb-6">Nuestro partner</h4>
-                <a href="https://www.maxcontinental.com/" target="_blank" rel="noreferrer" className="group">
-                  <img 
-                    src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/logo-max-transp.png" 
-                    alt="Logo Max Continental" 
-                    className="h-10 w-auto brightness-0 invert opacity-60 group-hover:opacity-100 transition-all duration-300"
-                  />
-                </a>
+                <h4 className="font-poppins font-semibold uppercase text-xl mb-6">Nuestros partners</h4>
+                <div className="flex flex-col gap-6">
+                  {/* Partner: Max Continental */}
+                  <a href="https://www.maxcontinental.com/" target="_blank" rel="noreferrer" className="group">
+                    <img 
+                      src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/logo-max-transp.png" 
+                      alt="Logo Max Continental" 
+                      className="h-10 w-auto brightness-0 invert opacity-60 group-hover:opacity-100 transition-all duration-300"
+                    />
+                  </a>
+                  {/* Partner: Distribuidora Gamma */}
+                  <a href="https://www.distribuidoragamma.com.ar/" target="_blank" rel="noreferrer" className="group">
+                    <img 
+                      src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/logo-gamma.png" 
+                      alt="Logo Distribuidora Gamma" 
+                      className="h-10 w-auto brightness-0 invert opacity-60 group-hover:opacity-100 transition-all duration-300"
+                    />
+                  </a>
+                </div>
               </div>
               <div>
                 <h4 className="font-poppins font-semibold uppercase text-xl mb-6">Contacto</h4>
