@@ -41,6 +41,8 @@ export default function App() {
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/hemobag.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/TIANHE.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/logo-hisern.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/medicon.png", // Nueva Marca
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/topdres.png", // Nueva Marca
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/bajaypack.jpg",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/higiemax-color-scaled.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/index-color.png",
@@ -189,10 +191,10 @@ export default function App() {
             >
               <motion.div 
                 animate={{ 
-                  x: isPaused ? undefined : [0, -5280] 
+                  x: isPaused ? undefined : [0, -5760] // Ajustado para 24 marcas (48px de gap + 192px de ancho)
                 }} 
                 transition={{ 
-                  duration: 40,
+                  duration: 45,
                   repeat: Infinity, 
                   ease: "linear" 
                 }}
