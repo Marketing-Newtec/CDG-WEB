@@ -159,8 +159,8 @@ export default function App() {
                 <div className="grid grid-cols-2 gap-8 mt-12">
                   <div className="flex flex-col gap-2">
                     <Award size={32} className="text-[#e74520]" />
-                    <div className="text-3xl font-bold font-poppins">20+</div>
-                    <div className="text-xs text-white/40 uppercase font-bold tracking-widest">años de experiencia</div>
+                    <div className="text-3xl font-bold font-poppins">Desde 2003</div>
+                    <div className="text-xs text-white/40 uppercase font-bold tracking-widest">experiencia y calidad</div>
                   </div>
                   <div className="flex flex-col gap-2">
                     <VenetianMask size={32} className="text-[#e74520]" />
