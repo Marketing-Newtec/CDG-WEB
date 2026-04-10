@@ -145,7 +145,7 @@ export default function App() {
                   href="#nosotros" 
                   className="font-sans px-12 py-6 bg-white text-[#911913] font-bold rounded-full hover:shadow-[0_0_50px_rgba(255,255,255,0.3)] transition-all text-lg tracking-widest uppercase"
                 >
-                  Conócenos
+                  Conocenos
                 </motion.a>
               </motion.div>
             </div>
