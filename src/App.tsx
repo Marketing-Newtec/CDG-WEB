@@ -63,15 +63,15 @@ export default function App() {
 
   const LanguageSelector = ({ mobile = false }: { mobile?: boolean }) => (
     <div className={`flex items-center gap-6 ${mobile ? 'justify-center mt-10' : 'ml-10 pl-10 border-l border-white/10'}`}>
-      <button onClick={() => window.location.replace('https://cdgimportadora.com.ar')} className="flex items-center gap-2 group transition-all">
+      <a href="https://cdgimportexport.com.ar/" target="_top" className="flex items-center gap-2 group no-underline">
         <img src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" alt="Spanish" className="w-4 h-3 object-cover rounded-sm opacity-40 group-hover:opacity-100 transition-opacity" />
-        <span className={`text-[11px] font-bold tracking-[0.2em] transition-colors ${mobile ? 'text-lg' : 'text-white/40 group-hover:text-white'}`}>ES</span>
-      </button>
+        <span className={`text-[11px] font-bold tracking-[0.2em] ${mobile ? 'text-lg' : 'text-white/40 group-hover:text-white'}`}>ES</span>
+      </a>
       <span className="text-white/10 font-thin select-none">|</span>
-      <button onClick={() => window.location.replace('https://cdgimportadora.com.ar/en')} className="flex items-center gap-2 group transition-all">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="English" className="w-4 h-3 object-cover rounded-sm opacity-60 group-hover:opacity-100 transition-opacity" />
-        <span className={`text-[11px] font-bold tracking-[0.2em] transition-colors ${mobile ? 'text-lg' : 'text-white'}`}>EN</span>
-      </button>
+      <a href="https://en-cdg-six.vercel.app/" target="_top" className="flex items-center gap-2 group no-underline">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="English" className="w-4 h-3 object-cover rounded-sm opacity-100" />
+        <span className={`text-[11px] font-bold tracking-[0.2em] ${mobile ? 'text-lg' : 'text-white'}`}>EN</span>
+      </a>
     </div>
   );
 
@@ -132,39 +132,40 @@ export default function App() {
         <main>
           <section id="home" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
             <div className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-fixed opacity-30" style={{ backgroundImage: `url('https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/cdg-inicio-importadora.jpg')` }} />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-[#911913]/90 z-0" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/40 to-[#911913]/90 z-0 pointer-events-none" />
             <div className="max-w-7xl mx-auto px-6 w-full relative z-10 text-center">
               <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="flex flex-col items-center">
                 <img src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/03/CDG-2-scaled.png" alt="CDG Import" className="w-auto h-24 md:h-40 lg:h-48 mb-10 brightness-0 invert drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]" />
-                <p className="font-sans text-xl md:text-3xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed font-light">
-                  We are the official import and export trade division of <br className="hidden md:block" />
+                <p className="font-sans text-xl md:text-3xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed font-light drop-shadow-lg">
+                  We are the official trade and import division for <br className="hidden md:block" />
                   <strong>Max Continental</strong> and <strong>Distribuidora Gamma</strong>.
                 </p>
-                <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#about" className="px-12 py-6 bg-white text-[#911913] font-bold rounded-full transition-all text-lg tracking-widest uppercase">Learn More</motion.a>
+                <motion.a whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} href="#about" className="font-sans px-12 py-6 bg-white text-[#911913] font-bold rounded-full transition-all text-lg tracking-widest uppercase">Learn More</motion.a>
               </motion.div>
             </div>
           </section>
 
           <section id="about" className="py-24 lg:py-32 px-6 bg-white/5 backdrop-blur-sm">
             <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-              <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}>
+              <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} className="relative">
                 <div className="rounded-[40px] lg:rounded-[60px] overflow-hidden shadow-2xl border-4 border-white/10 aspect-[4/5] relative group">
                   <img src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/cdg-importadora-deposito.jpg" alt="CDG Warehouse" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+                  <div className="absolute inset-0 bg-[#911913]/20 group-hover:bg-transparent transition-colors duration-700" />
                 </div>
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 50 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-                <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold uppercase mb-8 lg:mb-10 tracking-tighter leading-[1.1]">WHO WE ARE</h2>
-                <p className="text-lg lg:text-xl text-white/70 mb-6 leading-relaxed">A leading firm in the import and export of medical products, ensuring international logistics and distribution standards for hospital-grade supplies.</p>
+                <h2 className="font-poppins text-4xl md:text-5xl lg:text-7xl font-bold uppercase mb-8 lg:mb-10 tracking-tighter leading-[1.1]">WHO WE ARE</h2>
+                <p className="font-sans text-lg lg:text-xl text-white/70 mb-6 leading-relaxed">A strategic leader in the import and export of medical grade supplies, guaranteeing global logistics and distribution standards for healthcare institutions.</p>
                 <div className="grid grid-cols-2 gap-8 mt-12">
                   <div className="flex flex-col gap-2">
                     <Award size={32} className="text-[#e74520]" />
-                    <div className="text-3xl font-bold">Since 2003</div>
+                    <div className="text-3xl font-bold font-poppins">Since 2003</div>
                     <div className="text-xs text-white/40 uppercase font-bold tracking-widest">Expertise & Quality</div>
                   </div>
                   <div className="flex flex-col gap-2">
                     <VenetianMask size={32} className="text-[#e74520]" />
-                    <div className="text-3xl font-bold">500+</div>
-                    <div className="text-xs text-white/40 uppercase font-bold tracking-widest">Imported Products</div>
+                    <div className="text-3xl font-bold font-poppins">500+</div>
+                    <div className="text-xs text-white/40 uppercase font-bold tracking-widest">Imported products</div>
                   </div>
                 </div>
               </motion.div>
@@ -173,14 +174,14 @@ export default function App() {
 
           <section id="brands" className="py-24 lg:py-32 overflow-hidden bg-black/20">
             <div className="max-w-7xl mx-auto px-6 mb-16 text-center">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tighter mb-4">Brands That Trust Us</h2>
+              <h2 className="font-poppins text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-tighter mb-4">Brands That Trust Us</h2>
               <div className="w-24 h-1 bg-[#e74520] mx-auto"></div>
             </div>
-            <div className="flex relative" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
+            <div className="flex relative cursor-pointer" onMouseEnter={() => setIsPaused(true)} onMouseLeave={() => setIsPaused(false)}>
               <motion.div animate={{ x: isPaused ? undefined : [0, -6240] }} transition={{ duration: 55, repeat: Infinity, ease: "linear" }} className="flex gap-8 whitespace-nowrap">
                 {[...marcas, ...marcas, ...marcas].map((logo, i) => (
-                  <div key={i} className="flex-shrink-0 w-48 h-24 bg-[#F6F6F6] rounded-2xl flex items-center justify-center px-6">
-                    <img src={logo} alt="Brand Logo" className="max-w-full max-h-[65%] object-contain opacity-80 hover:opacity-100 transition-opacity" />
+                  <div key={i} className="flex-shrink-0 w-48 h-24 bg-[#F6F6F6] rounded-2xl border border-black/5 flex items-center justify-center transition-all px-6">
+                    <img src={logo} alt="Brand Logo" className="max-w-full max-h-[65%] object-contain opacity-80 hover:opacity-100 transition-opacity" referrerPolicy="no-referrer" />
                   </div>
                 ))}
               </motion.div>
@@ -195,23 +196,27 @@ export default function App() {
                 <img src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/03/CDG-2-scaled.png" alt="CDG Logo" className="h-16 w-auto brightness-0 invert" />
               </div>
               <div>
-                <h4 className="font-semibold uppercase text-xl mb-6">Navigation</h4>
-                <ul className="space-y-4 text-white/50">
+                <h4 className="font-poppins font-semibold uppercase text-xl mb-6">Navigation</h4>
+                <ul className="space-y-4 text-white/50 font-sans">
                   <li><a href="#home" className="hover:text-white transition-colors">Home</a></li>
                   <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
                   <li><a href="#brands" className="hover:text-white transition-colors">Brands</a></li>
                 </ul>
               </div>
               <div className="flex flex-col items-center md:items-start">
-                <h4 className="font-semibold uppercase text-xl mb-6">Our Partners</h4>
+                <h4 className="font-poppins font-semibold uppercase text-xl mb-6">Our partners</h4>
                 <div className="flex flex-col gap-6">
-                  <img src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/logo-max-transp.png" alt="Max Continental" className="h-10 w-auto brightness-0 invert opacity-60" />
-                  <img src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/logo-gamma.png" alt="Distribuidora Gamma" className="h-10 w-auto brightness-0 invert opacity-60" />
+                  <a href="https://www.maxcontinental.com/" target="_blank" rel="noreferrer" className="group">
+                    <img src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/logo-max-transp.png" alt="Max Continental Logo" className="h-10 w-auto brightness-0 invert opacity-60 group-hover:opacity-100 transition-all duration-300" />
+                  </a>
+                  <a href="https://www.distribuidoragamma.com.ar/" target="_blank" rel="noreferrer" className="group">
+                    <img src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/logo-gamma.png" alt="Distribuidora Gamma Logo" className="h-10 w-auto brightness-0 invert opacity-60 group-hover:opacity-100 transition-all duration-300" />
+                  </a>
                 </div>
               </div>
               <div>
-                <h4 className="font-semibold uppercase text-xl mb-6">Contact</h4>
-                <div className="space-y-4 text-white/60">
+                <h4 className="font-poppins font-semibold uppercase text-xl mb-6">Contact</h4>
+                <div className="space-y-4 font-sans text-white/60">
                   <p className="flex items-center justify-center md:justify-start gap-2 italic"><Mail size={18} /> administracion@cdgimport.com</p>
                   <p className="flex items-center justify-center md:justify-start gap-2 italic"><MapPin size={18} /> Industrial Park - Tandil, Arg.</p>
                 </div>
