@@ -69,7 +69,7 @@ export default function App() {
       </a>
       <span className="text-white/10 font-thin select-none">|</span>
       <a href="https://en-cdg-six.vercel.app/" target="_top" className="flex items-center gap-2 group no-underline">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="English" className="w-4 h-3 object-cover rounded-sm opacity-100" />
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/83/Flag_of_the_United_Kingdom_%283-5%29.svg" alt="English" className="w-4 h-3 object-cover rounded-sm opacity-100" />
         <span className={`text-[11px] font-bold tracking-[0.2em] ${mobile ? 'text-lg' : 'text-white'}`}>EN</span>
       </a>
     </div>
