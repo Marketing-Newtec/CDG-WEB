@@ -50,7 +50,7 @@ export default function App() {
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/intratub.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/Logo-Urocare.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/Max-Continental-viejo.png",
-    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/medline.jpg", // Medline agregada al lado de Continental
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/medline.jpg",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/max-sutures-color.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/medical-precision-color.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/Medispo-normal.png",
@@ -60,6 +60,36 @@ export default function App() {
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/Healcath-Plus.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/protbarrier.png"
   ];
+
+  const LanguageSelector = ({ mobile = false }: { mobile?: boolean }) => (
+    <div className={`flex items-center gap-6 ${mobile ? 'justify-center mt-10' : 'ml-10 pl-10 border-l border-white/10'}`}>
+      <button 
+        onClick={() => window.location.replace('https://cdgimportadora.com.ar')} 
+        className="flex items-center gap-2 group transition-all"
+      >
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Spain.svg" 
+          alt="Spanish" 
+          className="w-4 h-3 object-cover rounded-sm opacity-60 group-hover:opacity-100 transition-opacity" 
+        />
+        <span className={`text-[11px] font-bold tracking-[0.2em] transition-colors ${mobile ? 'text-lg' : 'text-white/60 group-hover:text-white'}`}>ES</span>
+      </button>
+
+      <span className="text-white/10 font-thin select-none">|</span>
+
+      <button 
+        onClick={() => window.location.replace('https://cdgimportadora.com.ar/en')} 
+        className="flex items-center gap-2 group transition-all"
+      >
+        <img 
+          src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" 
+          alt="English" 
+          className="w-4 h-3 object-cover rounded-sm opacity-40 group-hover:opacity-100 transition-opacity" 
+        />
+        <span className={`text-[11px] font-bold tracking-[0.2em] transition-colors ${mobile ? 'text-lg' : 'text-white/40 group-hover:text-white'}`}>EN</span>
+      </button>
+    </div>
+  );
 
   return (
     <div className="min-h-screen font-sans text-white bg-[#0a0a0a]">
@@ -83,25 +113,29 @@ export default function App() {
               <img 
                 src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/03/CDG-2-scaled.png" 
                 alt="CDG Logo" 
-                className="h-12 md:h-16 w-auto brightness-0 invert"
+                className="h-10 md:h-16 w-auto brightness-0 invert"
                 referrerPolicy="no-referrer"
               />
             </motion.div>
 
-            <div className="hidden md:flex gap-10">
-              {navLinks.map((link, i) => (
-                <motion.a
-                  key={link.name}
-                  href={link.href}
-                  initial={{ opacity: 0, y: -10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: i * 0.1 }}
-                  className="text-sm font-bold hover:text-white/70 transition-colors uppercase tracking-widest relative group font-sans"
-                >
-                  {link.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
-                </motion.a>
-              ))}
+            {/* Desktop Nav */}
+            <div className="hidden md:flex items-center">
+              <div className="flex gap-10">
+                {navLinks.map((link, i) => (
+                  <motion.a
+                    key={link.name}
+                    href={link.href}
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    className="text-[11px] font-bold hover:text-white/70 transition-colors uppercase tracking-[0.25em] relative group font-sans"
+                  >
+                    {link.name}
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-white transition-all duration-300 group-hover:w-full"></span>
+                  </motion.a>
+                ))}
+              </div>
+              <LanguageSelector />
             </div>
 
             <button className="md:hidden p-2 hover:bg-white/10 rounded-lg transition-colors" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
@@ -109,15 +143,30 @@ export default function App() {
             </button>
           </div>
 
+          {/* Mobile Menu */}
           <AnimatePresence>
             {mobileMenuOpen && (
-              <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="md:hidden bg-black/60 backdrop-blur-xl border-t border-white/10 overflow-hidden">
-                <div className="px-6 py-8 flex flex-col gap-6 text-center">
+              <motion.div 
+                initial={{ opacity: 0, height: 0 }} 
+                animate={{ opacity: 1, height: '100vh' }} 
+                exit={{ opacity: 0, height: 0 }} 
+                className="md:hidden fixed top-0 left-0 w-full bg-black/95 backdrop-blur-2xl z-40 overflow-hidden flex flex-col justify-center"
+              >
+                <button className="absolute top-8 right-8" onClick={() => setMobileMenuOpen(false)}>
+                   <X size={32} />
+                </button>
+                <div className="px-6 flex flex-col gap-8 text-center">
                   {navLinks.map((link) => (
-                    <a key={link.name} href={link.href} onClick={() => setMobileMenuOpen(false)} className="font-poppins text-2xl font-bold uppercase tracking-tighter hover:scale-105 transition-transform">
+                    <a 
+                      key={link.name} 
+                      href={link.href} 
+                      onClick={() => setMobileMenuOpen(false)} 
+                      className="text-3xl font-bold uppercase tracking-widest hover:text-[#911913] transition-colors"
+                    >
                       {link.name}
                     </a>
                   ))}
+                  <LanguageSelector mobile={true} />
                 </div>
               </motion.div>
             )}
@@ -193,7 +242,7 @@ export default function App() {
             >
               <motion.div 
                 animate={{ 
-                  x: isPaused ? undefined : [0, -6240] // Ajustado para 26 marcas: (48px gap + 192px ancho) * 26 = 6240px
+                  x: isPaused ? undefined : [0, -6240] 
                 }} 
                 transition={{ 
                   duration: 55, 
@@ -234,7 +283,6 @@ export default function App() {
               <div className="flex flex-col items-center md:items-start">
                 <h4 className="font-poppins font-semibold uppercase text-xl mb-6">Nuestros partners</h4>
                 <div className="flex flex-col gap-6">
-                  {/* Partner: Max Continental */}
                   <a href="https://www.maxcontinental.com/" target="_blank" rel="noreferrer" className="group">
                     <img 
                       src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/logo-max-transp.png" 
@@ -242,7 +290,6 @@ export default function App() {
                       className="h-10 w-auto brightness-0 invert opacity-60 group-hover:opacity-100 transition-all duration-300"
                     />
                   </a>
-                  {/* Partner: Distribuidora Gamma */}
                   <a href="https://www.distribuidoragamma.com.ar/" target="_blank" rel="noreferrer" className="group">
                     <img 
                       src="https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/logo-gamma.png" 
