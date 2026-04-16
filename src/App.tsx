@@ -12,7 +12,7 @@ import {
   Award,
   VenetianMask
 } from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
@@ -41,7 +41,7 @@ export default function App() {
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/hemobag.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/TIANHE.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/logo-hisern.png",
-    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/medicon-1.png", // URL Actualizada de Medicon
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/medicon-1.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/topdres.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/bajaypack.jpg",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/higiemax-color-scaled.png",
@@ -50,6 +50,7 @@ export default function App() {
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/intratub.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/Logo-Urocare.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/Max-Continental-viejo.png",
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/medline.jpg", // Medline agregada al lado de Continental
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/max-sutures-color.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/medical-precision-color.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/Medispo-normal.png",
@@ -57,7 +58,7 @@ export default function App() {
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/one-gloves-color.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/Healcath.png",
     "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/Healcath-Plus.png",
-    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/protbarrier.png" // Nueva Marca Agregada
+    "https://indigo-spider-680423.hostingersite.com/wp-content/uploads/2026/04/protbarrier.png"
   ];
 
   return (
@@ -192,10 +193,10 @@ export default function App() {
             >
               <motion.div 
                 animate={{ 
-                  x: isPaused ? undefined : [0, -6000] // Ajustado para 25 marcas: (48px gap + 192px ancho) * 25 = 6000px
+                  x: isPaused ? undefined : [0, -6240] // Ajustado para 26 marcas: (48px gap + 192px ancho) * 26 = 6240px
                 }} 
                 transition={{ 
-                  duration: 50, // Ligeramente más lento para acomodar la nueva marca manteniendo la suavidad
+                  duration: 55, 
                   repeat: Infinity, 
                   ease: "linear" 
                 }}
